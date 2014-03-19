@@ -69,6 +69,18 @@ App::down(function()
 
 /*
 |--------------------------------------------------------------------------
+| Require The Form Macros File
+|--------------------------------------------------------------------------
+|
+| Then load up the form macros file, which defines shortcuts (macros)
+| to be used in forms.
+|
+*/
+
+require app_path().'/start/form.php';
+
+/*
+|--------------------------------------------------------------------------
 | Require The Filters File
 |--------------------------------------------------------------------------
 |
