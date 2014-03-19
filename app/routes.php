@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', function()
+// The Auth routes handle all the login, registration, and profile functions
+Route::group(['prefix' => 'auth'], function()
 {
-	return View::make('hello');
+	Route::get ('login', ['uses' => 'AuthController@getLogin', 'as' => 'auth.login'])->before('guest');
+	Route::post('login', ['uses' => 'AuthController@postLogin'])->before('guest');
+
+	Route::get('logout', ['uses' => 'AuthController@getLogout', 'as' => 'auth.logout'])->before('auth');
 });
