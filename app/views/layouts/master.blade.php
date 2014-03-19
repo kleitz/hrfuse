@@ -10,6 +10,7 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
         @yield('styles', '')
@@ -30,7 +31,7 @@
         <div class="footer">
             <div class="container-fluid">
                 <div class="col-xs-6 text-left">
-                    <p>Powered by <a href="https://github.com/raptblue/hrfuse" target="_blank">HRFuse</a>.  Made with &hearts; by <a href="https://twitter.com/raptblue" target="_blank">@RaptBlue</a>.</p>
+                    <p>Powered by <a href="https://github.com/raptblue/hrfuse" target="_blank">HRFuse</a>.  Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/raptblue" target="_blank">@RaptBlue</a>.</p>
                 </div>
                 <div class="col-xs-6 text-right">
                 </div>
