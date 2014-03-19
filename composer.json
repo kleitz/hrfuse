@@ -4,7 +4,8 @@
 	"keywords": ["hr", "human resources", "corporate"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*"
+		"laravel/framework": "4.1.*",
+        "toddish/verify": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
