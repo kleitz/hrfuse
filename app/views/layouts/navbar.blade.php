@@ -18,7 +18,7 @@
 						</ul>
 					</div>
 				@else
-					<a class="btn btn-primary navbar-btn">Login</a>
+					<a class="btn btn-primary navbar-btn" href="{{ route('auth.login') }}">Login</a>
 				@endif
 			</div>
 		</div>

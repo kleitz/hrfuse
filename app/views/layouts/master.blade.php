@@ -30,7 +30,7 @@
         <div class="footer">
             <div class="container-fluid">
                 <div class="col-xs-6 text-left">
-                    <p>&copy; 2013 - {{ date('Y') }} <a href="{{ url('/') }}" style="font-weight: 700;">CreatorsCast</a>. Part of the <a href="http://freedom.tm/" target="_blank" style="font-weight: 700;">Freedom!</a> family.</p>
+                    <p>Powered by <a href="https://github.com/raptblue/hrfuse" target="_blank">HRFuse</a>.  Made with &hearts; by <a href="https://twitter.com/raptblue" target="_blank">@RaptBlue</a>.</p>
                 </div>
                 <div class="col-xs-6 text-right">
                 </div>

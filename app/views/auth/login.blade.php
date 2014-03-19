@@ -9,7 +9,7 @@
 				{{ Form::hidden('redirect', Route::currentRouteName()) }}
 				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h4 class="panel-title text-center">Login with your CreatorsCast Account</h4>
+						<h4 class="panel-title text-center">Login to HRFuse</h4>
 					</div>
 					<div class="panel-body">
 						{{ Form::strapText('identity', 'Username or Email', true) }}
