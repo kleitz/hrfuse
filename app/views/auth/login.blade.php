@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+	Login // HRFuse
+@stop
+
 @section('content')
 	<div class="container-fluid">
 		<div class="row">
