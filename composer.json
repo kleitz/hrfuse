@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-        "toddish/verify": "dev-master"
+        "toddish/verify": "dev-master",
+        "laravelbook/ardent": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

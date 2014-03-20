@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateStaffTables extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		// Create the addresses table
+		Schema::create('addresses', function($table)
+		{
+			$table->increments('id')->unsigned();
+			$table->integer('user_id')->unsigned();
+			$table->foreign('user_id')->references('id')->on('users');
+			$table->boolean('primary');
+			$table->string('address_1');
+			$table->string('address_2');
+			$table->string('city');
+			$table->string('state_province');
+			$table->string('country');
+			$table->string('postalcode', 10);
+			$table->softDeletes();
+			$table->timestamps();
+		});
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		// Drop the addresses table
+		Schema::dropIfExists('addresses');
+	}
+
+}

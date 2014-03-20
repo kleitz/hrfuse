@@ -24,4 +24,10 @@ Route::group(['prefix' => 'settings'], function()
 	Route::get('/', ['uses' => 'SettingsController@getIndex', 'as' => 'settings.index'])->before('auth');
 });
 
+Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
+{
+	Route::get ('addresses', ['uses' => 'ProfileController@getAddresses', 'as' => 'profile.addresses']);
+	Route::post('addresses', ['uses' => 'ProfileController@postAddresses']);
+});
+
 Route::get('/', ['uses' => 'HomeController@getIndex', 'as' => 'home'])->before('auth');
