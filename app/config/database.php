@@ -55,8 +55,8 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'database',
-			'username'  => 'root',
+			'database'  => 'hrfuse',
+			'username'  => 'hrfuse',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
@@ -64,16 +64,6 @@ return array(
 		),
 
 		// @TODO: as a config option, let the user specify the database to use for user auth
-		'creatorscast' => array(
-			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'creatorscast',
-			'username'  => 'creatorscast',
-			'password'  => '',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-		),
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
