@@ -15,6 +15,12 @@ class Address extends Ardent {
 	    'postalcode' => 'required',
 	);
 
+	// primary address scope
+	public function scopePrimary($query)
+	{
+		return $query->where('primary', true)->first();
+	}
+
 	public function user()
 	{
 		return $this->belongsTo('User');
