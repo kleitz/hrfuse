@@ -9,13 +9,13 @@
 |
 */
 
-Form::macro('strapText', function($field, $label, $old = FALSE)
+Form::macro('strapText', function($field, $label, $old = FALSE, $initial = null)
 {
 	// Define label
 	$input_label = Form::label($field, $label);
 
 	// Define form field
-	if ($old) $input = Form::text($field, Input::old($field) ? Input::old($field) : null, ['placeholder' => $label, 'class' => 'form-control']);
+	if ($old) $input = Form::text($field, Input::old($field) ? Input::old($field) : $initial, ['placeholder' => $label, 'class' => 'form-control']);
 	else $input = Form::text($field, null, ['placeholder' => $label, 'class' => 'form-control']);
 
 	// Get errors from the session
