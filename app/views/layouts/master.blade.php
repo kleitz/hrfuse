@@ -31,9 +31,10 @@
         <div class="footer">
             <div class="container-fluid">
                 <div class="col-xs-6 text-left">
-                    <p>Powered by <a href="https://github.com/raptblue/hrfuse" target="_blank">HRFuse</a>.  Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/raptblue" target="_blank">@RaptBlue</a>.</p>
+                    <p>Powered by <a href="https://github.com/raptblue/hrfuse" target="_blank">HRFuse</a>. <span class="text-muted">{{ Config::get('meta.version') }}</span></p>
                 </div>
                 <div class="col-xs-6 text-right">
+	                Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/raptblue" target="_blank">@RaptBlue</a>.
                 </div>
             </div>
         </div>
