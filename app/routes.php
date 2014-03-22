@@ -26,6 +26,11 @@ Route::group(['prefix' => 'settings'], function()
 
 Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
 {
+	Route::get('/', ['uses' => 'ProfileController@getIndex', 'as' => 'profile']);
+
+	Route::get ('edit', ['uses' => 'ProfileController@getEdit', 'as' => 'profile.edit']);
+	Route::post('edit', ['uses' => 'ProfileController@postEdit']);
+
 	Route::get ('addresses', ['uses' => 'ProfileController@getAddresses', 'as' => 'profile.addresses']);
 	Route::post('addresses', ['uses' => 'ProfileController@postAddresses']);
 });

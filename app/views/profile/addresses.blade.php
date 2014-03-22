@@ -1,7 +1,15 @@
 @extends('layouts.master')
 
 @section('title')
-	Addresses -- Profile // HRFuse
+	Profile -- Addresses // HRFuse
+@stop
+
+@section('styles')
+	<style type="text/css">
+		.panel {
+			position: relative;
+		}
+	</style>
 @stop
 
 @section('content')
@@ -22,11 +30,13 @@
 					@foreach (Auth::user()->addresses as $address)
 						@if ($address->primary)
 							<div class="panel panel-primary">
+							<p class="text-primary" style="position: absolute; right: 8px; top: 8px;">{{{ $address->name }}} (Primary)</p>
 						@else
 							<div class="panel panel-default">
+								<p class="text-muted" style="position: absolute; right: 8px; top: 8px;">{{{ $address->name }}}</p>
 						@endif
 							<div class="panel-body">
-								<h4 style="margin: 0;">{{ $address->address_1 }}</h4>
+								<h4>{{ $address->address_1 }}</h4>
 								@if ($address->address_2)
 									<h4>{{ $address->address_2 }}</h4>
 								@endif
@@ -55,6 +65,8 @@
 				<div class="modal-body">
 					{{ Form::token() }}
 					{{ Form::hidden('type', 'new') }}
+					{{ Form::strapText('name', 'Name this Address', true) }}
+					<hr />
 					{{ Form::strapText('address_1', 'Address 1', true) }}
 					{{ Form::strapText('address_2', 'Address 2', true) }}
 					<div class="row">

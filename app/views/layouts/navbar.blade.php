@@ -14,6 +14,8 @@
 					<div class="btn-group navbar-btn">
 						<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">{{{ ucfirst(Auth::user()->username) }}} ({{{ Auth::user()->email }}})</button>
 						<ul class="dropdown-menu" role="menu">
+							<li><a href="{{ route('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
+							<li class="divider"></li>
 							<li><a href="{{ route('auth.logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
 						</ul>
 					</div>
