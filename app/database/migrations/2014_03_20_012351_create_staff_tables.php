@@ -41,6 +41,9 @@ class CreateStaffTables extends Migration {
 			$table->string('position');
 			$table->string('email');
 			$table->dateTime('dob');
+			$table->string('twitter');
+			$table->string('facebook');
+			$table->string('googleplus');
 			$table->softDeletes();
 			$table->timestamps();
 		});

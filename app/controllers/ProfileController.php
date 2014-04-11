@@ -20,6 +20,9 @@ class ProfileController extends BaseController {
 		$user->profile->position = Input::get('position');
 		$user->profile->email = Input::get('email');
 		$user->profile->dob = Carbon\Carbon::createFromDate(Input::get('year'), Input::get('month'), Input::get('day'))->toDateString();
+		$user->profile->twitter = Input::get('twitter');
+		$user->profile->facebook = Input::get('facebook');
+		$user->profile->googleplus = Input::get('googleplus');
 
 		if (! $user->profile->save())
 		{

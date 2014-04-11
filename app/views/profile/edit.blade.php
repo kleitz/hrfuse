@@ -49,6 +49,10 @@
 							</div>
 							<div class="panel-body">
 								{{ Form::strapText('email', 'Public Email', true, Auth::user()->profile->email) }}
+								<hr />
+								{{ Form::strapText('twitter', 'Twitter Handle', true, Auth::user()->profile->twitter) }}
+								{{ Form::strapText('facebook', 'Facebook Username', true, Auth::user()->profile->facebook) }}
+								{{ Form::strapText('googleplus', 'Google+ Username', true, Auth::user()->profile->googleplus) }}
 							</div>
 						</div>
 					</div>

@@ -4,6 +4,10 @@
 	Profile // HRFuse
 @stop
 
+@section('styles')
+	<link rel="stylesheet" href="{{ asset('css/social.css') }}">
+@stop
+
 @section('content')
 	<div class="container">
 		<div class="row">
@@ -27,7 +31,15 @@
 					</div>
 					<div class="panel-footer clearfix">
 						<div class="pull-left">
-							
+							@if (Auth::user()->profile->twitter)
+								<a class="btn btn-xs btn-twitter" href="http://twitter.com/{{{ str_replace('@', '', Auth::user()->profile->twitter) }}}"><i class="fa fa-twitter"></i> {{{ Auth::user()->profile->twitter }}}</a>
+							@endif
+							@if (Auth::user()->profile->facebook)
+								<a class="btn btn-xs btn-facebook" href="http://facebook.com/{{{ Auth::user()->profile->facebook }}}"><i class="fa fa-facebook"></i> {{{ Auth::user()->profile->facebook }}}</a>
+							@endif
+							@if (Auth::user()->profile->googleplus)
+								<a class="btn btn-xs btn-google-plus" href="http://plus.google.com/{{{ str_replace('@', '', Auth::user()->profile->googleplus) }}}"><i class="fa fa-google-plus"></i> {{{ Auth::user()->profile->googleplus }}}</a>
+							@endif
 						</div>
 						<div class="pull-right">
 							<a class="btn btn-xs btn-primary" href="{{ route('profile.edit') }}"><i class="fa fa-pencil"></i> Edit Profile</a>
