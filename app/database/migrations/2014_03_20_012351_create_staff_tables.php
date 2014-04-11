@@ -40,6 +40,7 @@ class CreateStaffTables extends Migration {
 			$table->string('last_name');
 			$table->string('position');
 			$table->string('email');
+			$table->dateTime('dob');
 			$table->softDeletes();
 			$table->timestamps();
 		});

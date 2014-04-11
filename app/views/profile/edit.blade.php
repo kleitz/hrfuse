@@ -24,6 +24,21 @@
 								{{ Form::strapText('last_name', 'Last Name', true, Auth::user()->profile->last_name) }}
 								<hr />
 								{{ Form::strapText('position', 'Position', true, Auth::user()->profile->position) }}
+								<hr />
+								<div class="form-group">
+									{{ Form::label('dob', 'Date of Birth') }}
+									<div class="row">
+										<div class="col-xs-5">
+											{{ Form::selectMonth('month', Auth::user()->profile->dob->month, ['class' => 'form-control']) }}
+										</div>
+										<div class="col-xs-3">
+											{{ Form::selectRange('day', 1, 31, Auth::user()->profile->dob->day, ['class' => 'form-control']) }}
+										</div>
+										<div class="col-xs-4">
+											{{ Form::selectYear('year', 1900, date('Y'), Auth::user()->profile->dob->year, ['class' => 'form-control']) }}
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

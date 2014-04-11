@@ -20,7 +20,8 @@
 							</div>
 							<div class="col-xs-10">
 								<h2>{{{ Auth::user()->profile->first_name }}} {{{ Auth::user()->profile->last_name }}} <small>{{{ Auth::user()->profile->position }}}</small></h2>
-								<h5 class="text-muted"><i class="fa fa-envelope"></i> {{{ Auth::user()->profile->email }}}</h5>
+								<h5 class="text-muted"><i class="fa fa-fw fa-envelope"></i> {{{ Auth::user()->profile->email }}}</h5>
+								<h5 class="text-muted"><i class="fa fa-fw fa-calendar"></i> {{{ Auth::user()->profile->dob->age }}} years old</h5>
 							</div>
 						</div>
 					</div>
