@@ -21,7 +21,12 @@ Route::group(['prefix' => 'auth'], function()
 
 Route::group(['prefix' => 'settings'], function()
 {
-	Route::get('/', ['uses' => 'SettingsController@getIndex', 'as' => 'settings.index'])->before('auth');
+	Route::get('/', ['uses' => 'SettingsController@getIndex', 'as' => 'settings'])->before('auth');
+});
+
+Route::group(['prefix' => 'directory'], function()
+{
+	Route::get('/', ['uses' => 'DirectoryController@getIndex', 'as' => 'directory'])->before('auth');
 });
 
 Route::group(['prefix' => 'profile', 'before' => 'auth'], function()

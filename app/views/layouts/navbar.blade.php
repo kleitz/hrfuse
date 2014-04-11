@@ -9,6 +9,9 @@
 			<a href="{{ url('/') }}" class="navbar-brand">HRFuse</a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="{{ route('directory') }}">Directory</a></li>
+			</ul>
 			<div class="navbar-right">
 				@if (Auth::check())
 					<div class="btn-group navbar-btn">
