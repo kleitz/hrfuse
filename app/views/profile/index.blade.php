@@ -4,10 +4,6 @@
 	Profile // HRFuse
 @stop
 
-@section('styles')
-	<link rel="stylesheet" href="{{ asset('css/social.css') }}">
-@stop
-
 @section('content')
 	<div class="container">
 		<div class="row">
