@@ -4,6 +4,8 @@ class DirectoryController extends BaseController {
 
 	public function getIndex()
 	{
-		return View::make('directory.index');
+		$users = User::paginate(10);
+
+		return View::make('directory.index')->with('users', $users);
 	}
 }

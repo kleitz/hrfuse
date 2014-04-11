@@ -6,7 +6,7 @@
 
 @section('content')
 	<div class="container">
-		@foreach (array_chunk(User::all()->all(), 2) as $users)
+		@foreach (array_chunk($users->all(), 2) as $users)
 			<div class="row">
 				@foreach($users as $user)
 					<div class="col-md-6">
@@ -15,7 +15,7 @@
 								<div class="row">
 									<div class="col-xs-3">
 										{{-- @TODO: Clean this up --}}
-										<img src="{{ "http://www.gravatar.com/avatar/" . md5(strtolower(trim($user->profile->email))) . "?d=" . urlencode("http://placehold.it/250x250?text=no%20picture") . "&s=250" }}" class="img-responsive img-rounded" />
+										<img src="{{ "http://www.gravatar.com/avatar/" . md5(strtolower(trim($user->profile->email))) . "?d=" . urlencode("http://placehold.it/250x250.png?text=no%20picture") . "&s=250" }}" class="img-responsive img-rounded" />
 									</div>
 									<div class="col-xs-9">
 										<h2>{{{ $user->profile->first_name }}} {{{ $user->profile->last_name }}} <small>{{{ $user->profile->position }}}</small></h2>
@@ -42,5 +42,10 @@
 				@endforeach
 			</div>
 		@endforeach
+		<div class="row">
+			<div class="col-md-12 text-center">
+				{{ User::paginate(10)->links() }}
+			</div>
+		</div>
 	</div>
 @stop

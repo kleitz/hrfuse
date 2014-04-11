@@ -16,7 +16,7 @@
 						<div class="row">
 							<div class="col-xs-2">
 								{{-- @TODO: Clean this up --}}
-								<img src="{{ "http://www.gravatar.com/avatar/" . md5(strtolower(trim(Auth::user()->profile->email))) . "?d=" . urlencode("http://placehold.it/250x250?text=no%20picture") . "&s=250" }}" class="img-responsive img-rounded" />
+								<img src="{{ "http://www.gravatar.com/avatar/" . md5(strtolower(trim(Auth::user()->profile->email))) . "?d=" . urlencode("http://placehold.it/250x250.png?text=no%20picture") . "&s=250" }}" class="img-responsive img-rounded" />
 							</div>
 							<div class="col-xs-10">
 								<h2>{{{ Auth::user()->profile->first_name }}} {{{ Auth::user()->profile->last_name }}} <small>{{{ Auth::user()->profile->position }}}</small></h2>
