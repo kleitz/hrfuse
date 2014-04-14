@@ -22,3 +22,12 @@
 		<li class="subitem"><a href="{{ route('profile.addresses') }}"><i class="fa fa-home"></i> Addresses</a></li>
 	@endif
 </ul>
+@if (Auth::user()->is('Admin'))
+	<ul class="nav nav-sidebar">
+		@if (Request::is('admin'))
+			<li class="active"><a href="{{ route('admin') }}"><i class="fa fa-gears"></i> Admin</a></li>
+		@else
+			<li><a href="{{ route('admin') }}"><i class="fa fa-gears"></i> Admin</a></li>
+		@endif
+	</ul>
+@endif

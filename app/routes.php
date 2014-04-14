@@ -29,6 +29,11 @@ Route::group(['prefix' => 'directory'], function()
 	Route::get('/', ['uses' => 'DirectoryController@getIndex', 'as' => 'directory'])->before('auth');
 });
 
+Route::group(['prefix' => 'admin', 'before' => 'auth'], function()
+{
+	Route::get('/', ['uses' => 'AdminController@getIndex', 'as' => 'admin']);
+});
+
 Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
 {
 	Route::get('/', ['uses' => 'ProfileController@getIndex', 'as' => 'profile']);

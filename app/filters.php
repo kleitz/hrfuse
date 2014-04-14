@@ -78,3 +78,15 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+|--------------------------------------------------------------------------
+| Role and Permission-based Filters
+|--------------------------------------------------------------------------
+|
+| The Role and Permission-based filters use the Verify permissions system
+| to validate requests against roles a user may have.  If the user does
+| not have the required permission, they'll be kicked back to the homepage
+| with an access denied message.
+|
+*/
