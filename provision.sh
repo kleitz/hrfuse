@@ -80,7 +80,7 @@ echo "GRANT ALL PRIVILEGES ON hrfuse.* TO 'hrfuse'@'localhost' IDENTIFIED BY ''"
 cd /var/www
 
 composer install --prefer-dist
-php artisan migrate
+php artisan migrate --seed
 
 
 # Give the services a final restart
