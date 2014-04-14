@@ -8,11 +8,7 @@
 	<div class="container">
 		{{ Form::open() }}
 		<div class="row">
-			<div class="col-xs-3">
-				@include('layouts.sidebar')
-				{{ Form::submit('Save Changes', ['class' => 'btn btn-primary btn-block btn-sm']) }}
-			</div>
-			<div class="col-xs-9">
+			<div class="col-xs-12">
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="panel panel-default">
@@ -57,6 +53,8 @@
 						</div>
 					</div>
 				</div>
+				<br />
+				{{ Form::submit('Save Changes', ['class' => 'btn btn-primary btn-block btn-sm']) }}
 			</div>
 		</div>
 		{{ Form::close() }}

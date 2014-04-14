@@ -16,10 +16,7 @@
 	<div class="container">
 		@include('layouts.messages')
 		<div class="row">
-			<div class="col-xs-3">
-				@include('layouts.sidebar')
-			</div>
-			<div class="col-xs-9">
+			<div class="col-xs-12">
 				@if (Auth::user()->addresses()->count() == 0)
 					<div class="panel panel-default">
 						<div class="panel-body">

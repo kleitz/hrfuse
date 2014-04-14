@@ -27,18 +27,46 @@
 
         @include('layouts.navbar')
 
-        @yield('content')
-
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="col-xs-6 text-left">
-                    <p>Powered by <a href="https://github.com/raptblue/hrfuse" target="_blank">HRFuse</a>. <span class="text-muted">{{ Config::get('meta.version') }}</span></p>
-                </div>
-                <div class="col-xs-6 text-right">
-	                Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/raptblue" target="_blank">@RaptBlue</a>.
-                </div>
-            </div>
+        <div class="container-fluid">
+	        <div class="row">
+		        @if (Auth::check())
+			        <div class="col-md-2 sidebar">
+				        @include('layouts.sidebar')
+			        </div>
+			        <div class="col-md-10 col-md-offset-2">
+				        @yield('content')
+			        </div>
+		        @else
+		            <div class="col-md-12">
+			            @yield('content')
+		            </div>
+		        @endif
+	        </div>
         </div>
+
+        @if (Auth::check())
+	        <div class="footer">
+		        <div class="container-fluid">
+			        <div class="col-md-5 col-md-offset-2 text-left">
+				        <p>Powered by <a href="https://github.com/raptblue/hrfuse" target="_blank">HRFuse</a>. <span class="text-muted">{{ Config::get('meta.version') }}</span></p>
+			        </div>
+			        <div class="col-md-5 text-right">
+				        Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/raptblue" target="_blank">@RaptBlue</a>.
+			        </div>
+		        </div>
+	        </div>
+        @else
+	        <div class="footer">
+		        <div class="container-fluid">
+			        <div class="col-md-6 text-left">
+				        <p>Powered by <a href="https://github.com/raptblue/hrfuse" target="_blank">HRFuse</a>. <span class="text-muted">{{ Config::get('meta.version') }}</span></p>
+			        </div>
+			        <div class="col-md-6 text-right">
+				        Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/raptblue" target="_blank">@RaptBlue</a>.
+			        </div>
+		        </div>
+	        </div>
+        @endif
 
         @yield('scripts', '')
 

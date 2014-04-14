@@ -1,17 +1,24 @@
-<div class="panel panel-default">
-	<div class="panel-heading" style="padding-left: 10px;">
-		<h3 class="panel-title"><i class="fa fa-user fa-fw"></i> {{{ ucfirst(Auth::user()->username) }}}</h3>
-	</div>
-	<div class="list-group">
-		@if (Route::currentRouteName() == 'profile')
-			<a class="list-group-item active" href="{{ route('profile') }}">Profile</a>
-		@else
-			<a class="list-group-item" href="{{ route('profile') }}">Profile</a>
-		@endif
-		@if (Route::currentRouteName() == 'profile.addresses')
-			<a class="list-group-item nested active" href="{{ route('profile.addresses') }}">Addresses</a>
-		@else
-			<a class="list-group-item nested" href="{{ route('profile.addresses') }}">Addresses</a>
-		@endif
-	</div>
-</div>
+<ul class="nav nav-sidebar">
+	@if (Request::is('directory'))
+		<li class="active"><a href="{{ route('directory') }}"><i class="fa fa-sitemap"></i> Directory</a></li>
+	@else
+		<li><a href="{{ route('directory') }}"><i class="fa fa-sitemap"></i> Directory</a></li>
+	@endif
+</ul>
+<ul class="nav nav-sidebar">
+	@if (Request::is('profile'))
+		<li class="active"><a href="{{ route('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
+	@else
+		<li><a href="{{ route('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
+	@endif
+	@if (Request::is('profile/edit'))
+		<li class="active subitem"><a href="{{ route('profile.edit') }}"><i class="fa fa-pencil"></i> Edit</a></li>
+	@else
+		<li class="subitem"><a href="{{ route('profile.edit') }}"><i class="fa fa-pencil"></i> Edit</a></li>
+	@endif
+	@if (Request::is('profile/addresses'))
+		<li class="active subitem"><a href="{{ route('profile.addresses') }}"><i class="fa fa-home"></i> Addresses</a></li>
+	@else
+		<li class="subitem"><a href="{{ route('profile.addresses') }}"><i class="fa fa-home"></i> Addresses</a></li>
+	@endif
+</ul>
